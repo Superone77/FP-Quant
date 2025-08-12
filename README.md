@@ -99,7 +99,7 @@ python model_quant.py \
 ```
 
 Above:
-* `--model_name_or_path` - The model to quantize. (currently only Llama and Qwen models are supported)
+* `--model_name_or_path` - The model to quantize. (currently Llama, Qwen and OLMoE models are supported)
 * `--format` - The quantization format.
 * `--w_bits` - The number of bits to quantize the weights to.
 * `--a_bits` - The number of bits to quantize the activations to.
