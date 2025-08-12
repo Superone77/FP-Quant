@@ -1,0 +1,9 @@
+torch
+transformers
+safetensors
+lm-eval
+datasets
+numpy
+tqdm
+wandb
+scipy

@@ -6,6 +6,7 @@ from transformers import AutoConfig
 from .common_utils import to
 from .llama_utils import QuantizedLlamaMLP, QuantizedLlamaAttention
 from .qwen3_utils import QuantizedQwen3MLP, QuantizedQwen3Attention
+from .olmoe_utils import QuantizedOlmoeMLP, QuantizedOlmoeAttention
 
 ### Calibration utils and modules
 
@@ -45,6 +46,8 @@ def get_mlp_layer(config: AutoConfig):
         return QuantizedLlamaMLP
     elif config.model_type == "qwen3":
         return QuantizedQwen3MLP
+    elif config.model_type == "olmoe":
+        return QuantizedOlmoeMLP
     else:
         raise ValueError(f"Model type {config.model_type} not supported")
 
@@ -53,5 +56,7 @@ def get_attention_layer(config: AutoConfig):
         return QuantizedLlamaAttention
     elif config.model_type == "qwen3":
         return QuantizedQwen3Attention
+    elif config.model_type == "olmoe":
+        return QuantizedOlmoeAttention
     else:
         raise ValueError(f"Model type {config.model_type} not supported")
